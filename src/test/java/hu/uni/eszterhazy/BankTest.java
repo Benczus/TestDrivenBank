@@ -13,8 +13,8 @@ public class BankTest
     String name = "Dagobert INC";
     UUID id = UUID.randomUUID();
     String location = "DUckburg";
-    String owner= "Dagobert"
-    Bank bank= new Bank(name, id, location, owner);
+    String owner= "Dagobert";
+    Bank bank=Bank.getInstance();
 
     @Before
     public void initMethod(){

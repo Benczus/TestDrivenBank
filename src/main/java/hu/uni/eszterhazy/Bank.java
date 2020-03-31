@@ -6,18 +6,59 @@ import java.util.UUID;
 
 public class Bank {
 
-    String name;
-    UUID id;
-    String location;
-    String owner;
-    List<User> users =new ArrayList<>();
+    private String bankName;
+    private UUID bankId;
+    private String location;
+    private String ownerName;
+    private int bankCode;
+    private List<User> userList;
+    private static Bank bank= new Bank("Dagobert INC.", UUID.randomUUID(), "Duckbert", "Dagobert Bácsi",  new ArrayList<>());
 
-    public Bank(String name, UUID id, String location, String owner) {
-        this.name = name;
-        this.id = id;
-        this.location = location;
-        this.owner = owner;
+
+
+
+    public String getBankName() {
+        return bankName;
     }
+
+    public UUID getBankId() {
+        return bankId;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public int getBankCode() {
+        return bankCode;
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    static Bank getInstance(){
+        return bank;
+    }
+
+    private Bank(String bankName, UUID bankId, String location, String ownerName, List<User> userList) {
+        this.bankName = bankName;
+        this.bankId = bankId;
+        this.location = location;
+        this.ownerName = ownerName;
+        this.bankCode = generateBankCode();
+        this.userList = userList;
+    }
+
+
+    public int generateBankCode(){
+        return (int) (Math.random()*1000);
+    }
+
 
     public void addUser(String userName, UUID userID, String mobileNum, String address ){
         //TODO
