@@ -11,8 +11,8 @@ public class Bank {
     private String location;
     private String ownerName;
     private int bankCode;
-    private List<User> userList;
-    private static Bank bank= new Bank("Dagobert INC.", UUID.randomUUID(), "Duckbert", "Dagobert Bácsi",  new ArrayList<>());
+    private List<User> userList = new ArrayList<>();
+    private static Bank bank= new Bank("Dagobert INC.", UUID.randomUUID(), "Duckbert", "Dagobert Bácsi");
 
 
 
@@ -45,7 +45,7 @@ public class Bank {
         return bank;
     }
 
-    private Bank(String bankName, UUID bankId, String location, String ownerName, List<User> userList) {
+    private Bank(String bankName, UUID bankId, String location, String ownerName) {
         this.bankName = bankName;
         this.bankId = bankId;
         this.location = location;
@@ -61,7 +61,7 @@ public class Bank {
 
 
     public void addUser(String userName, UUID userID, String mobileNum, String address ){
-        //TODO
+        userList.add(new User(userName, userID, mobileNum, address));
     }
 
 }

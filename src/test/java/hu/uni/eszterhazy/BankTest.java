@@ -10,10 +10,6 @@ import java.util.UUID;
  */
 public class BankTest
 {
-    String name = "Dagobert INC";
-    UUID id = UUID.randomUUID();
-    String location = "DUckburg";
-    String owner= "Dagobert";
     Bank bank=Bank.getInstance();
 
     @Before
