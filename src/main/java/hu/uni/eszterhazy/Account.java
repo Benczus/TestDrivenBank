@@ -64,4 +64,8 @@ public class Account implements Subject {
             o.update();
         }
     }
+
+    public void pay() {
+        //TODO
+    }
 }

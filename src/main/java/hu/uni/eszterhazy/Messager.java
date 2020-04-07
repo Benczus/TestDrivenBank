@@ -1,17 +1,18 @@
 package hu.uni.eszterhazy;
 
-public abstract class Messeger implements Observer{
+public abstract class Messager implements Observer{
 
     Subject subject;
     String state;
-    public Messeger(Subject subject) {
+    Messager(Subject subject) {
         this.subject = subject;
     }
 
     @Override
     public void update() {
         this.state=subject.getState();
+        displayMessage();
     }
 
-    abstract String displayMessege();
+    abstract String displayMessage();
 }
