@@ -3,6 +3,7 @@ package hu.uni.eszterhazy;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class AccountTest {
@@ -14,7 +15,7 @@ public class AccountTest {
         account.attach(new PhoneMessager(account, "12312551231"));
         account.attach(new EmailMessager(account, "kisjoska86@fakemail.com"));
         account.attach(new RESTMessager(account, UUID.randomUUID().toString()));
-
+        account.addCard( new Card.CardBuilder("Kis Jozsef", true).setExpDate(LocalDate.now().plusYears(2)).build());
 
 
     }

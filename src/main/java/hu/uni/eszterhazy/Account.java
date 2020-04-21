@@ -31,6 +31,7 @@ public class Account implements Subject {
     private String ownerName;
     private UUID id;
     List<Observer> observerList;
+    List<Card> cards;
 
     public Account(String ownerName) {
         this.ownerName = ownerName;
@@ -38,7 +39,7 @@ public class Account implements Subject {
         this.balance=0;
         observerList=new ArrayList<>();
         this.state="Created";
-
+        cards=new ArrayList<>();
     }
 
     public void withdraw(Double amount){
@@ -65,7 +66,20 @@ public class Account implements Subject {
         }
     }
 
-    public void pay() {
-        //TODO
+    public void addCard(Card card){
+        this.cards.add(card);
+    }
+
+    public void removeCard(Card card){
+        this.cards.add(card);
+    }
+
+
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public void pay(double amount, PaymentStrategy strategy) {
+        System.out.println(strategy.pay(amount));
     }
 }
